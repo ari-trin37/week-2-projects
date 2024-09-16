@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h> // For rand() and srand()
+#include <time.h>   // For time()
+
+int main() {
+    // Initialize the player's balance with a fixed amount (e.g., $20 worth of quarters).
+    int balance = 80; // Initial balance in quarters
+    int bet_temp = 0; // Temporary variable for bet amount
+
+
+    while (balance > 0)
+        // Display the user's current balance in both quarters and dollars before each bet.
+        {
+			printf("You have %d quarters ($%.2f).\n", balance, balance / 4.0);
+
+        // Prompt the user's to enter the number of quarters they want to bet or enter 0 to cash out.
+        printf("Enter the number of quarters you want to bet or enter 0 to cash out: ");
+        scanf("%d", &bet_temp);
+
+        // Validate the user's input to ensure it is a valid bet amount (greater than 0 and not exceeding the player's balance).
+        while (bet_temp > balance || bet_temp < 0)
+        { if (bet_temp > balance) 
+			{
+                printf("You cannot bet more than your current balance. Please enter a valid bet amount: ");
+            } else if (bet_temp < 0) 
+			{
+                printf("Bet amount cannot be negative. Please enter a valid bet amount: ");
+            }
+            scanf("%d", &bet_temp);
+        }
+
+        // If user chooses to cash out (by entering 0), display the final balance and end the game.
+        if (bet_temp == 0) {
+            printf("Your final balance is %d quarters ($%.2f). Thanks for playing!\n", balance, balance / 4.0);
+            break; // Exit the loop and end the game
+        }
+
+        // subtract bet from the user's balance.
+        balance -= bet_temp;
+
+        // Generate a random number between 1-100 to determine the outcome.
+        int spin = rand() % 100 + 1;
+        printf("Spin result: %d\n", spin);
+
+        // Display the result of the spin and update the user's balance based on the outcome.
+        if (spin < 50)
+        {
+			// user loses the bet
+			printf("You lost your bet of %d quarters.\n", bet_temp);
+        }
+			else if (spin >= 50 && spin <= 74)
+		{
+            // Player gets their bet back
+            printf("You got your bet of %d quarters back.\n", bet_temp);
+            balance += bet_temp;
+        }
+			else if (spin >= 75 && spin <= 94)
+		{
+            // user doubles their bet
+            printf("You doubled your bet of %d quarters!\n", bet_temp);
+            balance += bet_temp * 2;
+        }
+			else if (spin >= 95 && spin <= 100)
+		{
+            // user hits the jackpot and triples their bet
+            printf("Jackpot! You tripled your bet of %d quarters!\n", bet_temp);
+            balance += bet_temp * 3;
+        }
+
+        // Check if the user's balance has reached 0 and display a "Game Over" message if so.
+        if (balance == 0)
+		{
+            printf("Game Over! Your balance has reached 0 quarters.\n");
+            break; // Exit the loop, end the game
+        }
+    }
+
+    return 0;
+}

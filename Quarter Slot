@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+#users balance, $20 quarters = 80 quarters
+int balance = 80;
+
+# %d placeholder for current balance.
+printf("You have %d quarters.\n, balance);
+
+# display users balance/format specifier (printf, $%.2f) prints floating point # with exactly 2 decimal points.  
+# balance / 4.0 - int variable that represents 'balance', represents 1 quarter in dollars. 
+printf("This is equivalent to $%.2f.\n", balance / 4.0);
+
+# player enters # of quarters to bet
+# scanf, used to read input from user.
+# &bet - used to ensure input value is stored in 'bet'variable.
+printf("Enter the number of quarters to bet (or 0 to cash out): ");
+scanf("%d", &bet);
+
+# validate users input, ensures bet amount > 0 & does not exceed users total amount of $$.
+if (bet < 0 || bet > balance)
+{ 
+    printf("Invalid bet amount. Please enter a number between 1 and %d.\n", balance);
+}
+
+# if user chooses to cash out (0), display final results, end game.
+if (bet == 0)
+{
+   printf("You cashed out with %d quarters $%.2f).\n", balance, balance / 4.0);
+   break;
+}
+
+
