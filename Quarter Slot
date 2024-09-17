@@ -1,4 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+Int main (void)
+{
+	
+	return(0);
+}
+
+
+generate values 1-100
+
+
+
+_____________________________________________________________________________________________________________
+
+#include <stdio.h>
 
 #users balance, $20 quarters = 80 quarters
 int balance = 80;
