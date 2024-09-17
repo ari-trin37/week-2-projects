@@ -7,7 +7,7 @@ int main() {
     int balance = 80; // Initial balance in quarters
     int bet_temp = 0; // Temporary variable for bet amount
 
-
+	printf()
     while (balance > 0)
         // Display the user's current balance in both quarters and dollars before each bet.
         {

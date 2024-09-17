@@ -1,0 +1,167 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+Int main (void)
+{
+	return(0);
+}
+
+_____________________________________________________________________________________________________________
+#include <stdio.h>
+#include <stdlib.h> // rand(), generates random # , srand()
+#include <time.h>
+//Quarter Slots Game
+
+Int main (void)
+{
+		int rand_num;
+
+		// print welcome message
+
+	srand(time(NULL)); // setting the RNG seed to current timestamp
+}
+	// PRINTF/SCANF: PROMPT & COLLECT USER INPUT
+	// printf ("%d", 42)
+	// scanf("%d", &balance)
+
+	While (balance > 0)
+{
+	// print balance
+	printf("you have %d quarters ($%.02f)\n");
+	printf("How much you wanna bet?" );
+	scanf("%d", &bet)
+
+	If (bet == 0)
+
+	if (bet > balance || bet < 0)
+{
+	// print error
+	continue; //lets go to start of loop
+
+}
+	// uses modular arithmetic
+	rand num = rand() % 100 + 1;
+
+	if (rand num < 50)
+{
+	// player loses
+}
+	else if (rand num >= 50 && rand_num <= 74);
+{
+	// player gets bet back
+}
+	else if (Rand_num >= 75 && rand num < 94)
+{
+	// player doubles bet
+}
+else
+{
+		// jackpot, triple the bet
+}
+
+	return(0);
+}
+
+_____________________________________________________________________________________________________________
+//declare array of int
+int int_array1 [16];
+
+//declare array of 'float'
+float float_Array [32]
+
+//array decalare with initlaize list
+int fibnums[] = (1, 1, 2, 3, 5, 8, 13, 21);
+
+//access array members by index (counting from zero)
+int first fibnum = fibnums[0]
+int fifth fibnum = fibnum[4];
+int fib_index;
+
+for (fib_index = 0; fib_index < 8; ++fib_index);
+{
+	printf("%d\n", fibnums[fib_index])
+	printf("fibnums [%d] = %d\n", fib_index, fibnums [fib_index])
+}
+
+
+compiling: gcc -o example_app main.c
+
+Output: (fix)
+fibnums[1] = 1
+fibnums[2] = 1
+fibnums[3] = 1
+fibnums[4] = 1
+
+
+STRING EXAMPLE
+
+//declare string as empty array
+// (needs to end with null)
+// always count null in index
+char string[6];
+char string1[6] = []'H', 'e' , 'l' , 'l' 'o', '\0');
+
+
+//initializes 'char' array with string literal
+char string1[6] = []'H', 'e' , 'l' , 'l' 'o', '\0');
+char string2[6] = "Hello'\0'";
+
+manipulate like any arrayt
+int string_index = 0;
+
+While (string3[string index] != '\0')
+{
+	printf("%c\n", string3[string_index]);
+	++string index;
+}
+
+//buffering, pre-fetching data. block of memory, can read through data.
+//join strings otgther through file path
+char file path buff[4096];
+
+
+
+
+
+
+//output: gcc -o file-name1 file_name2
+running the file: ./example_app
+
+
+//extra notes
+int array init with {}
+* used for pointer
+& addres of operator
+
+//pointers - stores the memory address of another variable.
+
+
+
+//declares a pointer to an 'int', stores memory address for an 'int' variable
+int *x_pointer;
+
+//takes addreas of another variable & assign to pointer
+int x = 42;
+x_pointer = &x (x_pointer is memory address of x)
+
+//derefencing the value from pointer
+int y = *x_pointer; // what is int value of *x_pointer? // 
+int *y_pointer = &y;
+
+printf(" x=%d y=%d x_pointer=%p y pointer=%p", x, y, (void *x_pointer.))
+x, y---
+
+
+//pointer arithmetic with an array
+char qwerty[] = "QWERTY";
+char *qwerry ptr = &qwerty[0];
+
+While (*qwerty ptr != '\0')
+{
+	printf("%c\n", *qwerty_ptr);
+	++qwerty ptr;
+}
+
+return 0;
+
